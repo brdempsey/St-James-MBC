@@ -9,12 +9,9 @@ let   express =      require('express'),
     //   PassportLocalMongoose = require('passport-local-mongoose'),
       ConnectionCard = require('./models/ConnectionCard');
 
-console.log(process.env.DATABASEURL);
-
-//mongoose.connect('mongodb://localhost/st_james');
-mongoose.connect('mongodb://clergy:W1retap5bd@ds237922.mlab.com:37922/st_james');
 
 
+mongoose.connect(process.env.DATABASEURL);
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
