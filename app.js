@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 let   express =      require('express'),
       flash =        require('connect-flash'),
       app =          express(),
@@ -8,7 +8,6 @@ let   express =      require('express'),
     //   LocalStrategy = require('passport-local'),
     //   PassportLocalMongoose = require('passport-local-mongoose'),
       ConnectionCard = require('./models/ConnectionCard');
-
 
 
 mongoose.connect(process.env.DATABASEURL);
