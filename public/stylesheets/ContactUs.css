@@ -1,0 +1,43 @@
+#ContactFormTitle{
+    background: rgb(0, 48, 74);
+    padding: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+}
+
+label {
+    font-size: 1.5em;
+    /*color: #888888;*/
+    /*lighter grey for variety*/
+}
+
+
+.MessageBox {
+    height: 400px;
+}
+
+textarea{
+    width:100%;
+}
+
+
+.form-control{
+    border: solid 2px #888888;
+    
+}
+
+.TextBox {
+    border: solid 2px #888888;
+}
+
+
+
+
+.PhoneAddressEmail{
+    background: rgb(0, 48, 74);
+    padding: 20px;
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+}
