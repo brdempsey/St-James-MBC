@@ -10,7 +10,8 @@ let   express =      require('express'),
       ConnectionCard = require('./models/ConnectionCard');
 
 
-mongoose.connect('mongodb://localhost/st_james');
+//mongoose.connect('mongodb://localhost/st_james');
+mongoose.connect('mongodb://clergy:W1retap5bd@ds237922.mlab.com:37922/st_james');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
