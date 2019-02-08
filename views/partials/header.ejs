@@ -12,6 +12,7 @@
         <link rel='stylesheet' typ='text/css' href='/stylesheets/Media.css'>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/events.css">
     </head>
     <body>
 
@@ -36,7 +37,6 @@
             <li><a href="/PastorInfo/">Leadership</a></li>
             <li><a href="/ClergyInfo/">Staff</a></li>
        	    <li><a href="/ChurchHistory/">Church History</a></li>
-       	    <li><a href="/ConnectionCard/">Become A Member!</a></li>
        	  </ul>
        	</li>
        	<li class='dropdown'>
@@ -46,13 +46,43 @@
        	    <li><a href="/Services/">Services</a></li>
        	  </ul>
        	</li>
+       	<li><a href="/events/">Events</a></li>
        	<li><a href="/Donations/">Donations</a></li>
       </ul>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <% if(!currentUser){ %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Sign Up</a>
+                </li>
+            <% } else { %>
+                <li>
+                    <a class="nav-link" href="#">Signed in As <%= currentUser.username %></a>
+                </li>
+                <li>
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            <%  } %>
         <li><a href="/ContactUs/">Contact Us <i class="fa fa-phone" aria-hidden="true"></i></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<div class="errMessage container">
+    <!--You have to have the error length greater than 0 for the bar to disappear-->
+    <% if(error && error.length >0){ %>
+    <div class="alert alert-danger" role="alert">
+        <%= error %>
+    </div>
+    <% } %>
+    <% if(success && success.length > 0){ %>
+     <div class="alert alert-success" role="alert">
+        <%= success %>
+    </div>
+    <% } %>
+</div>

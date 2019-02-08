@@ -1,0 +1,52 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+        <h1>New Event</h1>
+        <p>Create new Events to be displayed on the Events Page</p>
+    </header>
+    <div class="row">
+        <div class="col-lg-6">
+            <h1>Event Creation Information</h1>
+            <p>When creating an event make sure that you are authorized to do so.
+            Inform the administration before creating an event. If the created event has
+            not been authorized it will be at the risk of being removed.</p>
+        </div>
+        <div class="col-lg-6">
+            <div class="eventForm">
+                <form action="/events" method="POST">
+                    <div class="form-group">
+                        <label class="newEntLabel">Title:</label>
+                        <input class="form-control" type="text" name="title" placeholder="What is your Event name?" required>
+                    </div>
+                    <div class="form-group">
+                         <label class="newEntLabel">Location:</label>
+                        <input class="form-control" type="text" name="location" placeholder="Where is yoru event being held?" required>
+                    </div>
+                    <div class="form-group">
+                         <label class="newEntLabel">Image:</label>
+                        <input class="form-control" type="text" name="image" placeholder="Find a picture for your event on the internet and paste the url">
+                    </div>
+                    <div class="form-group">
+                         <label class="newEntLabel">Date:</label>
+                        <input class="form-control" type="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                         <label class="newEntLabel">Time:</label>
+                        <input class="form-control" type="time" name="time" placeholder="00:00" required>
+                    </div>
+                    <div class="form-group">
+                         <label class="newEntLabel">Description:</label>
+                        <textarea class='TextBox' rows='4' cols='50' name='description' placeholder="What are the details of your event?" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-default btn-block btn-primary">Submit</button>   
+                    </div>
+                </form>
+                <a class="btn btn-success" href="/events">Go Back</a>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<% include ../partials/footer %>

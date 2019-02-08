@@ -1,0 +1,48 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <!--Header for the Events page containing page banner and info about the page-->
+    <header class="jumbotron">
+                <h1>St James Events</h1>
+            <p>Upcoming Events with St James Missionary Baptist Church</p>
+            <p>
+                <% if(currentUser && currentUser.isAdmin){ %>
+                    <a class="btn btn-primary btn-large" href="/events/new">Add New Event</a>
+                <% } else {%>
+                    
+                <% } %>
+            </p>
+    </header>
+    
+    <!--Displays the events on the events page and offers a link for more info-->
+    <div class="row" style="display:flex; flex-wrap: wrap;">
+        <div class="col-lg-12">
+                <% events.forEach(function(event){ %>
+                    
+                    <% if(event.date.toISOString() < now){ %>
+                        
+                    <% } else { %>  
+                        <div class="Event">
+                             <div class="row">
+                                 <div class="col-lg-3">
+                                      <img class="eventImg img-thumbnail" src="<%= event.image %>"> 
+                                 </div>
+                                  <div class="col-lg-9">
+                                     <h1><%= event.title %></h1>
+                                     <h2>Location: <%= event.location %></h2>
+                                     <h3>Date/Time: <%= event.date.toDateString() %> @ <%= event.time %></h3>
+                                     <p><%=event.description.substring(0,100) %></p>
+                                     <a href="/events/<%= event._id %>" id="eventBtn" class="btn btn-primary">More Info</a>
+                                 </div>
+                             </div>
+                         </div> 
+                    <% } %>
+                    
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>

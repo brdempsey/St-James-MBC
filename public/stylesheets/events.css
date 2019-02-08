@@ -1,0 +1,70 @@
+/*Index Page*/
+.TextBox {
+    width: 100%;
+}
+
+.eventImg {
+    height: 200px;
+    width: 200px;
+    
+/*Keeps aspect ratio*/
+  /*  display: block;*/
+  /*max-width:230px;*/
+  /*max-height:95px;*/
+  /*width: auto;*/
+  /*height: auto;*/
+}
+
+#eventBtn {
+ padding-bottom: 5px;   
+}
+
+
+.Event{
+    padding: 10px;
+    border-bottom: 3px solid black;
+    width: 100%;
+}
+
+
+
+/*Show page*/
+#delete-form{
+    display: inline;
+}
+
+.showImg{
+    
+/*Keeps aspect ratio*/
+  display: block;
+  max-width:400px;
+  max-height:300px;
+  width: auto;
+  height: auto;
+}
+
+.eventTitle{
+    text-align: center;
+    font-size: 5em;
+}
+
+.showInfo{
+  padding: 10px;
+  border: 3px solid #E92E2E;
+  padding: 20px;
+  background: #FFEBCD;
+  border-radius: 15px;
+
+}
+
+/*New page*/
+.newEntLabel{
+    font-size: 2em;
+    width: 100%;
+}
+
+.eventForm {
+    background-color: rgba(255, 239, 186, 0.7);
+    padding: 20px;
+    border: 2px solid black;
+}

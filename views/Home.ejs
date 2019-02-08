@@ -3,7 +3,10 @@
         
         <div id="landing-header">
      		<h1 id="Title">Welcome to St. James</h1>
-    		<a href='/ConnectionCard' class="btn btn-lg btn-danger">Join Us</a>
+     		<% if(currentUser){ %>
+                <% } else {%>
+                    <a href='/Register' class="btn btn-lg btn-danger">Join Us</a>
+                <% } %>
         </div>
         
         <ul class="slideshow">
