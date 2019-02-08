@@ -14,7 +14,7 @@ let eventRoutes = require("./routes/events"),
     indexRoutes = require("./routes/index");
 
 
-mongoose.connect(process.env.DATABASEURL);
+//mongoose.connect(process.env.DATABASEURL);
 
 //mongodb://BillyD:W1retap5bd@ds227255.mlab.com:27255/st_james
 mongoose.connect("mongodb://BillyD:W1retap5bd@ds227255.mlab.com:27255/st_james");
