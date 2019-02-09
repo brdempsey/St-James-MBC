@@ -16,7 +16,7 @@ let eventRoutes = require("./routes/events"),
 
 //mongoose.connect(process.env.DATABASEURL);
 
-//mongodb://BillyD:W1retap5bd@ds227255.mlab.com:27255/st_james
+
 mongoose.connect("mongodb://BillyD:W1retap5bd@ds227255.mlab.com:27255/st_james");
 //mongoose.connect("mongodb://localhost/st_james");
 app.use(express.static('public'));
