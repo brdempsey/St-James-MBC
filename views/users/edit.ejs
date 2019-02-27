@@ -1,0 +1,57 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <h1>Edit <%= user.username %>'s profile </h1>
+        </div>
+        <div class="col-lg-6">
+            <h1 class="loginTitle">Personal Information</h1>
+            <form action="/users/<%= user.id %>/?_method=PUT" method="post">
+                   <div class="form-group">
+                        <label>First Name:</label>
+                        <input class="form-control" type="text" name="user[fname]" value="<%= user.fname %>" required>
+                  </div>
+                   <div class="form-group">
+                        <label>Last Name:</label>
+                        <input class="form-control" type="text" name="user[lname]" value="<%= user.lname %>" required>
+                  </div>
+                  <div class="form-group">
+                        <label>Email:</label>
+                        <input class="form-control" type="email" name="user[email]" value="<%= user.email %>" required>
+                  </div>
+                  <div class="form-group">
+                        <label>Address:</label>
+                        <input class="form-control" type="text" name="user[address]" value="<%= user.address %>" required>
+                  </div>
+                  <div class="form-group">
+                        <label>State:</label>
+                        <input class="form-control" type="text" name="user[state]" value="<%= user.state %>" required>
+                  </div>
+                  <div class="form-group">
+                        <label>City:</label>
+                        <input class="form-control" type="text" name="user[city]" value="<%= user.city %>" required>
+                  </div>
+                  <div class="form-group">
+                        <label>Phone:</label>
+                        <input class="form-control" type="tel" name="user[phone]" value="<%= user.phone %>" required>
+                  </div>
+                   <div class="form-group">
+                        <label>Biography</label>
+                        <textarea class='form-control' rows='4' cols='50' name='user[bio]' required><%= user.bio %></textarea>
+                  </div>
+                  <h1 class="loginTitle">Profile Picture</h1>
+                  
+                  <div class="form-group">
+                      <label>Avatar:</label>
+                      <input class="form-control" type="text" name="user[avatar]" value="<%= user.avatar %>" required>
+                  </div>
+                   <div class="form-group">
+                        <button class="btn btn-danger">Update</button>
+                   </div> 
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>

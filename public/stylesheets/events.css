@@ -6,6 +6,7 @@
 .eventImg {
     height: 200px;
     width: 200px;
+    border: 2px solid black;
     
 /*Keeps aspect ratio*/
   /*  display: block;*/
@@ -41,6 +42,7 @@
   max-height:300px;
   width: auto;
   height: auto;
+  border: 2px solid black;
 }
 
 .eventTitle{

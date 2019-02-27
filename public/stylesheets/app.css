@@ -12,8 +12,6 @@ body{
 }
 
 
-
-
 /*Pastor Info*/
 #pastorH{
   padding: 10px;
@@ -23,6 +21,7 @@ body{
   max-height:600px;
   width: auto;
   height: auto;
+  margin: 0;
 }
 
 .leadershipInfo{
@@ -133,7 +132,7 @@ body{
 	opacity: 1;
 }
 
-/*Login/Signup*/
+/*Login/Signup/Profile*/
 .loginForm{
     width: 50%;
     margin: auto;
@@ -141,4 +140,39 @@ body{
 
 .loginTitle {
     text-align:center;
+}
+
+/*User Profile*/
+.profileImg {
+  border: 2px solid black;
+  
+  /*display: block;*/
+  max-width:400px;
+  max-height:300px;
+  width: 100%;
+  height: 300px;
+}
+
+.profileText {
+  padding-left: 5px;
+  display: inline; 
+  font-size: 20px;
+}
+
+.aboutMe {
+  padding: 10px;
+  background: rgba(233, 46, 46, 0.7);
+  height: 300px;
+}
+
+.contactInfo {
+  padding: 10px;
+  background: rgba(255, 235, 205, 0.7);
+  height: 300px;
+}
+
+.userName {
+   padding: 10px;
+  background: rgba(124, 196, 255, 0.7);
+  height: 300px;
 }

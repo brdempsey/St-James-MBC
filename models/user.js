@@ -10,8 +10,10 @@ let UserSchema = new mongoose.Schema({
     state: String,
     city: String,
     phone: String,
+    bio: String,
     username: String,
     password: String,
+    avatar: String,
     isAdmin: {
         type: Boolean, default: false
     }

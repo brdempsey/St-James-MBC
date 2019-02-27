@@ -20,7 +20,7 @@ router.get("/", function(req, res) {
     });
 });
 
-//Create Route
+//Create Event Route
 router.post("/", middleware.isLoggedIn, function(req, res){
     let title = req.body.title;
     let location = req.body.location;
@@ -44,6 +44,10 @@ router.post("/", middleware.isLoggedIn, function(req, res){
                 if(err){
                     console.log(err);
                 }else{
+                    if(!image)
+                    {
+                        image.src = "https://images.unsplash.com/photo-1458593140930-1f9049c952c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80";
+                    }
                     res.redirect("/events");
                 }
             });

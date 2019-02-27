@@ -1,0 +1,48 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <img class="profileImg" src="<%= user.avatar %>" alt="user profile image">    
+           
+        </div>
+        <div class="userName col-md-2">
+            <h1><%= user.username %></h1>
+            <div class="caption"><a href="mailto:<%= user.email %>"><%= user.email %></a></div>
+            <a href="/users/<%= user.id %>/edit" id="eventBtn" class="btn btn-primary">Edit Profile</a>
+        </div>
+        <div class="aboutMe col-md-3">
+            <h1>Name</h1>
+            <label>First Name:</label>
+            <p class="profileText"><%= user.fname %></p>
+            </br>
+            <label>Last Name:</label>
+            <p class="profileText"><%= user.lname %></p>
+            </br>
+        </div>
+        <div class="contactInfo col-md-4">
+            <h1>Contact Information</h1>
+            
+            <label>Address:</label>
+            <p class="profileText"><%= user.address %></p>
+            </br>
+            <label>City:</label>
+            <p class="profileText"><%= user.city %></p>
+            </br>
+            <label>State</label>
+            <p class="profileText"><%= user.state %></p>
+            </br>
+             <label>Email:</label>
+            <p class="profileText"><%= user.email %></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>About Me:</h1>
+            <p><%= user.bio %></p>
+        </div>
+        
+    </div>
+</div>
+
+<% include ../partials/footer %>

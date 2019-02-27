@@ -46,7 +46,21 @@ router.get("/register", function(req, res){
 
 //sign up logic
 router.post("/register", function(req, res){
-    let newUser = new User({username: req.body.username});
+    //Profile Info
+    let fname = req.body.fname;
+    let lname = req.body.lname;
+    let email = req.body.email;
+    let address = req.body.address;
+    let state = req.body.address;
+    let city = req.body.city;
+    let phone = req.body.phone;
+    let bio = req.body.bio;
+    let avatar = req.body.avatar;
+    //Sign Up Info
+    let username = req.body.username;
+    
+    let newUser = new User({username: username, fname:fname, lname:lname, email:email, address:address, state:state, city:city, phone:phone, bio:bio, avatar: avatar});
+    
     if(req.body.adminCode === 'liverpool#12'){
         newUser.isAdmin = true;
     }
@@ -57,6 +71,7 @@ router.post("/register", function(req, res){
         }
            passport.authenticate("local")(req, res, function(){
            req.flash("success", "Welcome to St James Missionary Baptist Church");
+           console.log(newUser);
            res.redirect("/events"); 
         });
     })
@@ -76,10 +91,43 @@ router.post("/login", passport.authenticate("local",
 });
 
 //logout route
-router.get("/logout", function(req, res){6
+router.get("/logout", function(req, res){
     req.logout();
     req.flash("error", "Logged you out!");
     res.redirect("/events");
+});
+
+
+//user profile
+router.get("/users/:id", function(req, res){
+    User.findById(req.params.id, function(err, foundUser){
+        if(err){
+            req.flash("error", "Could not located User");
+            res.redirect("/");
+        }
+        res.render("users/show", {user: foundUser});
+    })
+    
+});
+
+//edit user profile
+router.get("/users/:id/edit", middleware.checkProfileOwnership, function(req, res){
+   User.findById(req.params.id, function(err, foundUser){
+            res.render("users/edit", {user: foundUser}); 
+   });
+});
+
+ //Update user profile
+router.put("/users/:id", middleware.checkProfileOwnership, function(req, res){
+    //find and update the correct user
+    User.findByIdAndUpdate(req.params.id, req.body.user, function(err, updatedUser){
+        if(err){
+            res.redirect("/events");
+        }else {
+            //redirect to show page
+            res.redirect("/users/" + req.params.id);    
+        }
+    });
 });
 
 
