@@ -33,9 +33,9 @@ middlewareObj.checkProfileOwnership = function(req, res, next){
             {
               if(err || !foundUser){
                   req.flash("error", "User not found");
-                  res.redirect("back");
+                  res.redirect("/events");
               } else{
-                  if(foundUser.id === req.user._id || req.user.isAdmin){
+                  if(foundUser.id.equals === req.user._id || req.user.isAdmin){
                         next();  
                   } else {
                       req.flash("error", "You don't have permission to do that.");

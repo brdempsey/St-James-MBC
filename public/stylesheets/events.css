@@ -48,6 +48,8 @@
 .eventTitle{
     text-align: center;
     font-size: 5em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .showInfo{

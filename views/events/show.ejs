@@ -7,8 +7,7 @@
 
             <img class="showImg" src="<%= event.image %>">
             
-            <p><i><strong>Submitted by: 
-            <a href="/users/<%= event.author.id %>"><%= event.author.username %></a>
+            <p><i><strong>Submitted by: <%= event.author.username %>
             </strong></i></p>
             
             <% if(currentUser && currentUser.isAdmin){  %>
