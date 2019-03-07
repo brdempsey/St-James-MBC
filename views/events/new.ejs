@@ -25,7 +25,8 @@
                     </div>
                     <div class="form-group">
                          <label class="newEntLabel">Image:</label>
-                        <input class="form-control" type="text" name="image" placeholder="Find a picture for your event on the internet and paste the url">
+                         <caption><i>If you do not have an image a default one will be provided once you submit the event.</i></caption>
+                        <input class="form-control" id="eventPic" type="text" name="image" placeholder="Find a picture for your event on the internet and paste the url" required>
                     </div>
                     <div class="form-group">
                          <label class="newEntLabel">Date:</label>
@@ -40,7 +41,7 @@
                         <textarea class='TextBox' rows='4' cols='50' name='description' placeholder="What are the details of your event?" required></textarea>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-lg btn-default btn-block btn-primary">Submit</button>   
+                        <button id="eventSubmit" class="btn btn-lg btn-default btn-block btn-primary">Submit</button>   
                     </div>
                 </form>
                 <a class="btn btn-success" href="/events">Go Back</a>
@@ -49,4 +50,6 @@
     </div>
     
 </div>
+
+<script src="/javascript/events.js"></script>
 <% include ../partials/footer %>

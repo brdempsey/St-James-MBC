@@ -57,7 +57,7 @@ router.post("/register", function(req, res){
     let bio = req.body.bio;
     let avatar = req.body.avatar;
     //Sign Up Info
-    let username = req.body.username;
+    let username = req.body.username.toLowerCase();
     
     let newUser = new User({username: username, fname:fname, lname:lname, email:email, address:address, state:state, city:city, phone:phone, bio:bio, avatar: avatar});
     
