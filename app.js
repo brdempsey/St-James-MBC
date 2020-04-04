@@ -45,8 +45,6 @@ app.use(function(req, res, next){
 });
 
 
-
-
 app.get('/Donations', function(req, res){
    res.render('Donations'); 
 });

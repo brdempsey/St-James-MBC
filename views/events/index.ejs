@@ -30,7 +30,7 @@
                                   <div class="col-lg-9">
                                      <h1><%= event.title %></h1>
                                      <h2>Location: <%= event.location %></h2>
-                                     <h3>Date/Time: <%= event.date.toDateString() %> @ <%= event.time %></h3>
+                                     <h3 class="timeFormat">Date/Time: <%= event.date.toDateString() %> @ <%= event.time %></h3>
                                      <p><%=event.description.substring(0,100) %></p>
                                      <a href="/events/<%= event._id %>" id="eventBtn" class="btn btn-primary">More Info</a>
                                  </div>

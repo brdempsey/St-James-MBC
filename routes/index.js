@@ -35,6 +35,10 @@ router.get('/Services', function(req, res){
    res.render('Services'); 
 });
 
+router.get('/GeneralInformation', function(req, res){
+    res.render('GeneralInformation');
+});
+
 
 
 //Auth Routes
@@ -61,7 +65,7 @@ router.post("/register", function(req, res){
     
     let newUser = new User({username: username, fname:fname, lname:lname, email:email, address:address, state:state, city:city, phone:phone, bio:bio, avatar: avatar});
     
-    if(req.body.adminCode === 'liverpool#12'){
+    if(req.body.adminCode === 'StJames45'){
         newUser.isAdmin = true;
     }
     User.register(newUser, req.body.password, function(err, user){

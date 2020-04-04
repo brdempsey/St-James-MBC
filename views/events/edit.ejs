@@ -20,11 +20,11 @@
                     <div class="form-group">
                          <label class="newEntLabel">Image:</label>
                          <caption><i>If you do not have an image a default one will be provided once you submit the event.</i></caption>
-                        <input id="eventPic" class="form-control" type="text" name="event[image]" value="<%= event.image %>" required>
+                        <input class="eventPic form-control" type="text" name="event[image]" value="<%= event.image %>" required>
                     </div>
                     <div class="form-group">
                         <label class="newEntLabel">Date:</label>
-                        <input class="form-control" type="date" name="event[date]" value="<%= event.date.toISOString() %>" required>
+                        <input class="eventDate form-control" type="date" name="event[date]" value="<%= event.date.toISOString() %>" required>
                     </div>
                     <div class="form-group">
                         <label class="newEntLabel">Time:</label>
@@ -35,7 +35,7 @@
                         <textarea class='form-control' rows='4' cols='50' name='event[description]' required><%= event.description %></textarea>
                     </div>
                     <div class="form-group">
-                        <button id="eventSubmit" class="btn btn-lg btn-default btn-block btn-primary">Submit</button>   
+                        <button class="eventSubmit btn btn-lg btn-default btn-block btn-primary">Submit</button>   
                     </div>
                 </form>
                 <a class="btn btn-success" href="/events">Go Back</a>
